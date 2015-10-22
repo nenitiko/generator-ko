@@ -2,6 +2,7 @@
   "name": "<%= slugName %>",
   "version": "0.0.0",
   "devDependencies": {
+    "babel-core": "^5.8.25",
     "gulp": "^3.6.2",
     "gulp-requirejs-bundler": "^0.1.1",
     "gulp-concat": "~2.2.0",
@@ -26,6 +27,7 @@
     "requirejs": "^2.1.11",
 <% } %>
     "deeply": "~0.1.0",
-    "chalk": "~0.4.0"
+    "chalk": "~0.4.0",
+    "slash": "^1.0.0"
   }
 }

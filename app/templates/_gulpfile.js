@@ -1,5 +1,5 @@
 // Node modules
-var fs = require('fs'), vm = require('vm'), merge = require('deeply'), chalk = require('chalk'), es = require('event-stream'), path = require('path'), url = require('url');
+var fs = require('fs'), vm = require('vm'), merge = require('deeply'), chalk = require('chalk'), es = require('event-stream'), path = require('path'), url = require('url'), slash = require('slash');
 
 // Gulp and plugins
 var gulp = require('gulp'), rjs = require('gulp-requirejs-bundler'), concat = require('gulp-concat'), clean = require('gulp-clean'), filter = require('gulp-filter'),
@@ -130,6 +130,7 @@ gulp.task('serve:dist', ['default'], function() {
 });
 
 function babelTranspile(pathname, callback) {
+    pathname = slash(pathname);
     if (babelIgnoreRegexes.some(function (re) { return re.test(pathname); })) return callback();
     if (!babelCore.canCompile(pathname)) return callback();
     var src  = path.join(transpilationConfig.root, pathname);
